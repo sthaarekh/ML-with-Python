@@ -30,3 +30,14 @@ x_test_prediction = model.predict(x_test)
 accuracy_test = accuracy_score(x_test_prediction, y_test)
 print(accuracy_test)
 
+#now testing for the individual data and getting the prediction
+input_data = (0.0968,0.0821,0.0629,0.0608,0.0617,0.1207,0.0944,0.4223,0.5744,0.5025,0.3488,0.1700,0.2076,0.3087,0.4224,0.5312,0.2436,0.1884,0.1908,0.8321,1.0000,0.4076,0.0960,0.1928,0.2419,0.3790,0.2893,0.3451,0.3777,0.5213,0.2316,0.3335,0.4781,0.6116,0.6705,0.7375,0.7356,0.7792,0.6788,0.5259,0.2762,0.1545,0.2019,0.2231,0.4221,0.3067,0.1329,0.1349,0.1057,0.0499,0.0206,0.0073,0.0081,0.0303,0.0190,0.0212,0.0126,0.0201,0.0210,0.0041)
+
+#changing the input data to numpy array
+input_data_as_array = np.asarray(input_data)
+
+#reshape the numpy array 
+input_data_reshaped = input_data_as_array.reshape(1,-1)
+
+prediction = model.predict(input_data_reshaped)
+print(prediction)
