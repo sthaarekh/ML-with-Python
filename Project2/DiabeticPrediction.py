@@ -10,3 +10,7 @@ diabetes_data = pd.read_csv('/Users/sthaarekh/Documents/ /                     /
 print(diabetes_data.shape)
 print(diabetes_data.describe())
 print(diabetes_data['Outcome'].value_counts())
+
+#splitting the data
+x = diabetes_data.drop('Outcome', axis=1)
+y = diabetes_data('Outcome')
