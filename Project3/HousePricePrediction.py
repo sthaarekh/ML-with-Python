@@ -66,3 +66,10 @@ plt.scatter(y_test, x_test_prediction)
 plt.xlabel("Actual Value")
 plt.ylabel("Predicted Value")
 plt.show()
+
+#prediction of price
+input_data = (1.5603, 25.0, 5.045455, 1.133333, 845.0, 2.560606, 39.48 , -121.09)
+input_data_asarray = np.asarray(input_data).reshape(1,-1)
+
+prediction = model.predict(input_data_asarray)
+print("The predicted price of the house is",prediction[0])
