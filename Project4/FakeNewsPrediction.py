@@ -28,3 +28,12 @@ x = news_dataset.drop('label', axis=1)
 y = news_dataset['label']
 print(x,y)
 
+#Stemming: The process of reducing a word to its root word --> example: actor, acting, actress -> act
+port_stem = PorterStemmer()
+def stemming(content):
+    stemmed_content = re.sub('[^a-zA-Z]',' ', content)
+    stemmed_content = stemmed_content.lower()
+    stemmed_content = stemmed_content.split()
+    stemmed_content = [port_stem.stem(word) for word in stemmed_content if not word in stopwords.words('englis')]
+    stemmed_content = ' '.join(stemmed_content)
+    return stemmed_content
