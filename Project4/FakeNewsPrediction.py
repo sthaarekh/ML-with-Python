@@ -22,3 +22,9 @@ news_dataset = news_dataset.fillna('')      #replacing the null values with null
 #merging the author and title
 news_dataset['content'] = news_dataset['author']+' '+ news_dataset['title']
 print(news_dataset['content'])
+
+#separating the data and label
+x = news_dataset.drop('label', axis=1)
+y = news_dataset['label']
+print(x,y)
+
