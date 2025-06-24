@@ -24,3 +24,11 @@ correlation = house_dataframe.corr()
 plt.figure(figsize = (10,10))
 sns.heatmap(correlation, cbar=True, square=True, fmt='.2f', annot=True, annot_kws={'size':8}, cmap='Blues')
 plt.show()
+
+#splitting the data and target
+x = house_dataframe.drop('price', axis = 1)
+y = house_dataframe['price']
+
+#splitting the training and test data
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1)
+print(x_train.shape, x_test.shape)
