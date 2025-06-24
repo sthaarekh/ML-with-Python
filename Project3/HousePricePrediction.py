@@ -60,3 +60,9 @@ print(r2_test)
 #absolute mean error
 abs_test = metrics.mean_absolute_error(y_test, x_test_prediction)
 print(abs_test)
+
+#visual representation of actual and predicted value
+plt.scatter(y_test, x_test_prediction)
+plt.xlabel("Actual Value")
+plt.ylabel("Predicted Value")
+plt.show()
