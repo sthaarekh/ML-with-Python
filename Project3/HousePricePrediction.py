@@ -38,3 +38,25 @@ model = XGBRegressor()
 
 model.fit(x_train, y_train)
 
+#prediction on training and finding error
+x_train_prediction = model.predict(x_train)
+
+#r2 error
+r2_train = metrics.r2_score(y_train, x_train_prediction)
+print(r2_train)
+
+#absolute mean error
+abs_train = metrics.mean_absolute_error(y_train, x_train_prediction)
+print(abs_train)
+
+
+#prediction on testing and finding error
+x_test_prediction = model.predict(x_test)
+
+#r2 error
+r2_test = metrics.r2_score(y_test, x_test_prediction)
+print(r2_test)
+
+#absolute mean error
+abs_test = metrics.mean_absolute_error(y_test, x_test_prediction)
+print(abs_test)
