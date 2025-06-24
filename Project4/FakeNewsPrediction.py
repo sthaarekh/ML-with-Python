@@ -44,3 +44,9 @@ print(news_dataset['content'])
 #defining new data and label
 x = news_dataset['content'].values
 y = news_dataset['label'].values
+
+#converting the textual data to numerical data
+vectorizer = TfidfVectorizer()
+vectorizer.fit(x)
+x = vectorizer.transform(x)
+print(x)
