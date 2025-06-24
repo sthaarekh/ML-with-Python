@@ -14,3 +14,9 @@ print(diabetes_data['Outcome'].value_counts())
 #splitting the data
 x = diabetes_data.drop('Outcome', axis=1)
 y = diabetes_data('Outcome')
+
+#standarizing the data
+scaler = StandardScaler()
+scaler.fit(x,y)
+standerized_data = scaler.transform(x)
+print(standerized_data)
