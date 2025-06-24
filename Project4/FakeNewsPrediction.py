@@ -67,3 +67,11 @@ print(accuracy_train)
 x_test_prediction = model.predict(x_test)
 accuracy_test = accuracy_score(x_test_prediction, y_test)
 print(accuracy_test)
+
+#Making a predictive system
+x_new = x_test[0]
+predicted = model.predict(x_new)
+if(predicted==0):
+    print("This news is real")
+else:
+    print("This news is fake")
