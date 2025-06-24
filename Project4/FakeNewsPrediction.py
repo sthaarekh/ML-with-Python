@@ -19,5 +19,6 @@ news_dataset.head()
 news_dataset.isnull().sum()
 news_dataset = news_dataset.fillna('')      #replacing the null values with null string
 
-
-
+#merging the author and title
+news_dataset['content'] = news_dataset['author']+' '+ news_dataset['title']
+print(news_dataset['content'])
