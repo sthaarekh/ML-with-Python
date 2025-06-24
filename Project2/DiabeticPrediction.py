@@ -13,10 +13,14 @@ print(diabetes_data['Outcome'].value_counts())
 
 #splitting the data
 x = diabetes_data.drop('Outcome', axis=1)
-y = diabetes_data('Outcome')
+y = diabetes_data['Outcome']
 
 #standarizing the data
 scaler = StandardScaler()
-scaler.fit(x,y)
+scaler.fit(x)
 standerized_data = scaler.transform(x)
 print(standerized_data)
+x = standerized_data
+
+#traning and testing data
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, stratify=y, random_state=2)
