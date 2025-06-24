@@ -5,7 +5,7 @@ from nltk.corpus import stopwords   #nltk---> natural language tool kit
 from nltk.stem.porter import PorterStemmer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 import nltk
 nltk.download('stopwords')
@@ -53,3 +53,17 @@ print(x)
 
 #splitting into train and test data
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, stratify=y, random_state=2)
+
+#training the model
+model = LogisticRegression()
+model.fit(x_train, y_train)
+
+#prediction on train data
+x_train_prediction = model.predict(x_train)
+accuracy_train = accuracy_score(x_train_prediction, y_train)
+print(accuracy_train)
+
+#prediction on test data
+x_test_prediction = model.predict(x_test)
+accuracy_test = accuracy_score(x_test_prediction, y_test)
+print(accuracy_test)
