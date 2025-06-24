@@ -32,3 +32,9 @@ y = house_dataframe['price']
 #splitting the training and test data
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1)
 print(x_train.shape, x_test.shape)
+
+#model training
+model = XGBRegressor()
+
+model.fit(x_train, y_train)
+
