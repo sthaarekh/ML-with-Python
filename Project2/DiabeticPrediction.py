@@ -38,3 +38,15 @@ print("Training accuracy score is", accuracy_train)
 x_test_prediction = classifier.predict(x_test)
 accuracy_test = accuracy_score(x_test_prediction, y_test)
 print("Testing accuracy score is", accuracy_test)
+
+#making a predictive system
+input_data = (7,181,84,21,192,35.9,0.586,51)
+input_data_asarray = np.asarray(input_data)
+input_data_reshaped = input_data_asarray.reshape(1,-1)
+input_data_standarized = scaler.transform(input_data_reshaped)  #standarizing the input data
+
+prediction = classifier.predict(input_data_standarized)
+if(prediction==0):
+    print("The patient is non diabetic")
+else:
+    print("The patient is diabetic")
