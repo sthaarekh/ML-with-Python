@@ -28,3 +28,17 @@ feature_extraction = TfidfVectorizer(min_df = 1, stop_words='english', lowercase
 x_train_features = feature_extraction.fit_transform(x_train)
 x_test_features = feature_extraction.transform(x_test)
 print(x_train_features)
+
+#training the model
+model = LogisticRegression()
+model.fit(x_train_features, y_train)
+
+#evaluating the model on training data
+x_train_prediction = model.predict(x_train_features)
+accuracy = accuracy_score(y_train, x_train_prediction)
+print("accuracy on training data is",accuracy)
+
+#evaluating the model on test data
+x_test_prediction = model.predict(x_test_features)
+accuracy_test = accuracy_score(y_test, x_test_prediction)
+print("accuracy on training data is",accuracy_test)
