@@ -47,3 +47,13 @@ print(x_test_prediction)
 #r2 error
 r2 = metrics.r2_score(y_test, x_test_prediction)
 print(r2)
+
+#comparing the actual and predicted value
+y_test = list(y_test)
+plt.plot(y_test, color='blue', label = 'Actual Value')
+plt.plot(x_test_prediction, color='green', label='Predicted Value')
+plt.title('Actual Price vs Predicted Price')
+plt.xlabel('Number of values')
+plt.ylabel('GLD Price')
+plt.legend()
+plt.show()
