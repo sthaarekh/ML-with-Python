@@ -75,3 +75,4 @@ if(predicted==0):
     print("This news is real")
 else:
     print("This news is fake")
+    
