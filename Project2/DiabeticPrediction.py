@@ -50,3 +50,4 @@ if(prediction==0):
     print("The patient is non diabetic")
 else:
     print("The patient is diabetic")
+    
