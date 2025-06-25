@@ -25,3 +25,7 @@ plt.show()
 #range of GLD value
 sns.displot(gold_data['GLD'], color='Green')
 plt.show()
+
+#splitting the data values
+x = gold_data.drop(['Date', 'GLD'], axis = 1)
+y = gold_data['GLD']
