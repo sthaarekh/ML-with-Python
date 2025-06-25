@@ -42,3 +42,13 @@ print("accuracy on training data is",accuracy)
 x_test_prediction = model.predict(x_test_features)
 accuracy_test = accuracy_score(y_test, x_test_prediction)
 print("accuracy on training data is",accuracy_test)
+
+#Building a predictive system
+input_mail = ["Hey, are we still meeting for lunch at 1 PM today?"]
+input_mail_features = feature_extraction.transform(input_mail)
+
+prediction = model.predict(input_mail_features)
+if(prediction==0):
+    print("Spam Mail")
+else:
+    print("Ham Mail")
