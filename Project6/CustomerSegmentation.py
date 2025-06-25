@@ -30,3 +30,9 @@ plt.ylabel("WCSS")
 plt.show()
 
 #from the graph the optimum no of cluster is 5
+
+# Training the KMeans Clustering Model
+
+kmeans = KMeans(n_clusters=5, init='k-means++', random_state=0)
+y = kmeans.fit_predict(x)
+print(y)
