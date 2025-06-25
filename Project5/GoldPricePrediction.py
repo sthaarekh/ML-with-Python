@@ -9,7 +9,7 @@ from sklearn import metrics
 #loading the gold data
 gold_data = pd.read_csv('/Users/sthaarekh/Documents/ /                     /Python/Project5/gold_model_dataset_2015_2025.csv')
 gold_data = gold_data.drop(index=gold_data.index[0])
-
+print(gold_data)
 #data preprocessing
 gold_data.info()
 gold_data.isnull().sum()
@@ -57,3 +57,11 @@ plt.xlabel('Number of values')
 plt.ylabel('GLD Price')
 plt.legend()
 plt.show()
+
+#predicting the gold price
+input_data = (6092.18, 73.00, 32.61, 1.1618)
+input_data_asarray = np.asarray(input_data)
+input_data_reshaped = input_data_asarray.reshape(1,-1)
+
+prediction = model.predict(input_data_reshaped)
+print("The predicted gold price is",prediction[0])
