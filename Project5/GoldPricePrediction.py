@@ -9,3 +9,19 @@ from sklearn import metrics
 #loading the gold data
 gold_data = pd.read_csv('/Users/sthaarekh/Documents/ /                     /Python/Project5/gold_model_dataset_2015_2025.csv')
 gold_data = gold_data.drop(index=gold_data.index[0])
+
+#data preprocessing
+gold_data.info()
+gold_data.isnull().sum()
+gold_data.describe()
+
+#finding correlation among the data
+correlation = gold_data.select_dtypes(include='number').corr()
+#constructing a heatmap
+plt.figure(figsize=(10,10))
+sns.heatmap(correlation, cbar=True, square=True, fmt='.2f', annot=True, annot_kws={'size':8}, cmap='Blues')
+plt.show()
+
+#range of GLD value
+sns.displot(gold_data['GLD'], color='Green')
+plt.show()
