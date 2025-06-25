@@ -29,3 +29,7 @@ plt.show()
 #splitting the data values
 x = gold_data.drop(['Date', 'GLD'], axis = 1)
 y = gold_data['GLD']
+
+#training and testing data
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=2)
+print(x_train.shape, x_test.shape)
