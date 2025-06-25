@@ -33,3 +33,17 @@ y = gold_data['GLD']
 #training and testing data
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=2)
 print(x_train.shape, x_test.shape)
+
+#model training
+model = RandomForestRegressor()
+
+model.fit(x_train, y_train)
+
+#model testing 
+x_test_prediction = model.predict(x_test)
+print(x_test_prediction)
+
+#model error score
+#r2 error
+r2 = metrics.r2_score(y_test, x_test_prediction)
+print(r2)
