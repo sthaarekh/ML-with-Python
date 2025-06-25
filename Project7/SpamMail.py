@@ -52,3 +52,4 @@ if(prediction==0):
     print("Spam Mail")
 else:
     print("Ham Mail")
+    
