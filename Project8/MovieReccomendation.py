@@ -25,3 +25,18 @@ feature_vectors = vectorizer.fit_transform(combined_features)
 #finding the cosine similarity
 similarity = cosine_similarity(feature_vectors)
 print(similarity.shape)
+
+#taking movie name from user
+movie_name = input('Enter your favourite movie name: ')
+
+#creating a  list of all movie name
+list_of_movies = movies_data['title'].tolist()
+
+#finding the closest match to the input
+find_close_match = difflib.get_close_matches(movie_name, list_of_movies)
+
+closest_match = find_close_match[0]
+
+#finding the index of the movie
+index = movies_data[movies_data.title == closest_match]['index'].values[0]
+print(index)
