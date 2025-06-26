@@ -40,3 +40,7 @@ closest_match = find_close_match[0]
 #finding the index of the movie
 index = movies_data[movies_data.title == closest_match]['index'].values[0]
 print(index)
+
+#getting a list of similar movies
+similarity_score = list(enumerate(similarity[index]))
+print(similarity_score)
