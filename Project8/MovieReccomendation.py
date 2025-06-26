@@ -22,3 +22,6 @@ combined_features = movies_data['genres'] + ' ' + movies_data['keywords'] + ' ' 
 vectorizer = TfidfVectorizer()
 feature_vectors = vectorizer.fit_transform(combined_features)
 
+#finding the cosine similarity
+similarity = cosine_similarity(feature_vectors)
+print(similarity.shape)
